@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById("file");
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            fetch("/bin/readexcel", {
+                method: "POST",
+                body: formData,
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("response").innerText = data;
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <input type="file" id="file" name="file" />
+    <button onclick="uploadFile()">Upload</button>
+    <pre id="response"></pre>
+</body>
+</html>

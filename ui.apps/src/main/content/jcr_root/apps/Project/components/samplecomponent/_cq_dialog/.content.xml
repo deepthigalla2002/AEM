@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="cq dialog"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="/libs/granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <Tab1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab 1"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/tabs">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Text_x0020_field
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Text Field"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Textfield"
+                                name="./textfield"/>
+                        </items>
+                    </Tab1>
+                    <tab2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab2"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                        fieldLabel="Tab2">
+                        <items jcr:primaryType="nt:unstructured">
+                            <multifield
+                                jcr:primaryType="nt:unstructured"
+                                sling:resouceType="/libs/granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="multifield">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resouceType="/libs/granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <textfield
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Textfield"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Textfield"
+                                            name="./textfield"/>
+                                        <pathfield
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="pathfield"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="pathfield"
+                                            name="./pathfield"/>
+                                        <checkbox
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="checkbox"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldLabel="checkbox"
+                                            name="./checkbox"/>
+                                        <dropdown
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Dropdown"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="dropdown"
+                                            name="./dropdown">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <gd
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="deepthi"
+                                                    value="deepthi"/>
+                                                <ss
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="deepthi"
+                                                    value="deepthi"/>
+                                            </items>
+                                        </dropdown>
+                                        <nestedMultifield
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="/libs/granite/ui/components/coral/foundation/form/multifield">
+                                            <field
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/libs/granite/ui/components/coral/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <feild
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="1233"/>
+                                                </items>
+                                            </field>
+                                        </nestedMultifield>
+                                    </items>
+                                </field>
+                            </multifield>
+                        </items>
+                    </tab2>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

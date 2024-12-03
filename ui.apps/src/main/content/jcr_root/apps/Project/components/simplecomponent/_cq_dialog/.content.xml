@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="cq dialog"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="/libs/granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <Details
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Details"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Text_x0020_field
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="TextField"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Text Field"
+                                name="./textfield"/>
+                            <checkbox
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Checkbox"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Checkbox"
+                                name="./check"
+                                text="CheckBox"/>
+                            <dropdown
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Drop down"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Dropdown"
+                                name="./dropdown">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <india
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ss"/>
+                                    <russia
+                                        jcr:primaryType="nt:unstructured"
+                                        text="ss"/>
+                                </items>
+                            </dropdown>
+                            <file
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                fileNameParameter="./fileName"
+                                fileReferenceParameter="./fileReference"
+                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                name="./fileupload"
+                                title="Upload Image Asset"/>
+                        </items>
+                    </Details>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

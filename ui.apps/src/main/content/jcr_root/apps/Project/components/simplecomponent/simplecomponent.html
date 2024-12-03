@@ -1,0 +1,11 @@
+
+<sly data-sly-use.model="com.Project.core.models.DialogModel"/>
+    <h2>Properties</h2>
+    <p>Text: ${model.textfield}</p>
+    <p>Checkbox: ${model.checkbox ? 'Checked' : 'Unchecked'}</p>
+    <p>Country: ${model.dropdown}</p>
+    
+    <div>
+        <p>File Upload:</p>
+        <img src="${model.fileupload  @ context='uri'}" alt="Uploaded Image" />
+    </div>
