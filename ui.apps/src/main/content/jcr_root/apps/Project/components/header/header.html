@@ -1,0 +1,17 @@
+<h1>Header - Task 1</h1>
+<div data-sly-use.Head="com.Project.core.models.Task1">
+  <p>Path Field: ${Head.textfield}</p>
+  <p>Path Field: ${Head.pathfield}</p>
+  <p>CheckBox Enable : ${Head.checkbox ?'yes':'no'}</p>
+  <div>
+    <p> Multifield Display </p>
+    <div data-sly-list.item="${Head.multifield}">
+
+            <p>Date Picker: ${item.datepicker}</p>
+            <p>Text: ${item.textfield}</p>
+
+
+    </div>
+
+  </div>
+</div>

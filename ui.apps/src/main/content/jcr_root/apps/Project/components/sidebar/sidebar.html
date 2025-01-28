@@ -1,0 +1,39 @@
+<h1>Sidebar - Task 3</h1>
+<div data-sly-use.sidebar="com.Project.core.models.SidebarModel">
+  <div>
+    <h2>Tab 1: Header</h2>
+    <p>Logo Path: ${sidebar.logoPath}</p>
+    <p>Logo Mobile Image: ${sidebar.logoMobileImage}</p>
+    <p>Logo Link: ${sidebar.logoLink}</p>
+    <p>Enable Switch: ${sidebar.enableSwitch ? 'Enabled' : 'Disabled'}</p>
+  </div>
+
+  <div>
+    <h2>Tab 2: Header Links</h2>
+    <div data-sly-list.headerLinksData="${sidebar.headerLinks}">
+
+        <p>Name: ${headerLinksData.name}</p>
+        <p>Image: <img src="${headerLinksData.image}" /></p>
+
+    </div>
+  </div>
+
+  <div>
+    <h2>Tab 3: SideBar Navigation</h2>
+    <div data-sly-list.sidebarNavigationData="${sidebar.sidebarNavigation}">
+
+        <p>Desktop Icon: ${sidebarNavigationData.desktopIcon}</p>
+        <p>Mobile Icon: ${sidebarNavigationData.mobileIcon}</p>
+        <div data-sly-list.nestedMultiData="${sidebarNavigationData.nestedMulti}">
+
+            <p>Navigation URL: ${nestedMultiData.navigationURL}</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Tab 4: Region</h2>
+    <p>Country: ${sidebar.country}</p>
+  </div>
+</div>

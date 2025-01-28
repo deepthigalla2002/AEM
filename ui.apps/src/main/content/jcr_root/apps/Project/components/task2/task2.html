@@ -1,0 +1,19 @@
+
+<h1>Nested multifield - Task2</h1>
+
+<div data-sly-use.carouselModel="com.Project.core.models.Task2">
+  <div data-sly-list.multifielditem="${carouselModel.multiField}">
+    <h2>MultiField Data:</h2>
+
+      <p>Text :${multifielditem.textField}</p>
+      <p>Path :${multifielditem.pathField}</p>
+
+      <h2>Nested MultiField Data:</h2>
+      <div data-sly-list.nestedMultifieldItem="${multifielditem.nestedMultiField}">
+
+          <p>MultiField Text :${nestedMultifieldItem.text}</p>
+        </div>
+
+
+  </div>
+</div>

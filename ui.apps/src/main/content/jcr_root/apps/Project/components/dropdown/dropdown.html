@@ -1,0 +1,59 @@
+<h1>Single Article - Task 6</h1>
+
+<div><p>Enable PII : ${properties.enablepii ? "Enabled" : "Disabled"}</p></div>
+
+<div data-sly-test="${properties.enablepii}">
+    <p>CSS Class : ${properties.cssclass}</p>
+
+    </div>
+<script>
+
+(function (document, $) {
+    "use strict";
+
+    // when dialog gets injected
+    $(document).on("foundation-contentloaded", function (e) {
+        // Apply the handler for all existing and newly loaded checkboxes
+        checkboxEnableDisableHandler($(".cq-dialog-checkbox-showhide", e.target));
+    });
+
+    $(document).on("change", ".cq-dialog-checkbox-showhide", function (e) {
+        checkboxEnableDisableHandler($(this));
+    });
+
+    function checkboxEnableDisableHandler(el) {
+        el.each(function (i, element) {
+            if ($(element).is("coral-checkbox")) {
+                // Handle Coral3 checkbox
+                Coral.commons.ready(element, function (component) {
+                    enableDisableTextField(component, element);
+                    component.on("change", function () {
+                        enableDisableTextField(component, element);
+                    });
+                });
+            } else {
+                // Handle Coral2 checkbox
+                var component = $(element).data("checkbox");
+                if (component) {
+                    enableDisableTextField(component, element);
+                }
+            }
+        });
+    }
+
+    function enableDisableTextField(component, element) {
+        // Get the selector for the target text field
+        var targetSelector = $(element).data("cqDialogCheckboxShowhideTarget");
+        var $target = $(targetSelector);
+
+        if (targetSelector) {
+            // Enable or disable the text field based on checkbox state
+            $target.find("input").prop("disabled", !component.checked);
+        }
+    }
+})(document, Granite.$);
+
+
+
+
+</script>

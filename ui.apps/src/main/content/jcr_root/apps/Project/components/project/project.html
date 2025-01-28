@@ -1,0 +1,10 @@
+<div><p>Component Title: ${properties.title}</p><div>
+${'hello.world' @i18n}
+
+<h2> List Items</h2>
+
+<sly data-sly-use.pratice="com.Project.core.models.Project"/>
+<ul data-sly-list.country="${practice.countries}">
+<li>${country.title} -${country.value}</li>
+</ul>
+

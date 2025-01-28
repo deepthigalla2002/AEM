@@ -1,0 +1,3 @@
+<!ELEMENT root EMPTY>
+<!ATTLIST root name NMTOKEN #REQUIRED>
+<!ATTLIST root supported.countries CDATA #REQUIRED>
