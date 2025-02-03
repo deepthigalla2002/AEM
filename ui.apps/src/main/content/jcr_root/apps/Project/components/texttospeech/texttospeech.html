@@ -1,0 +1,58 @@
+<div class="tts-container">
+    <p id="tts-text">${properties.text}</p>
+    <button id="tts-play" class="tts-btn">🔊 Listen</button>
+</div>
+
+<style>
+    .tts-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .tts-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .tts-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let playButton = document.getElementById("tts-play");
+        let textToRead = document.getElementById("tts-text").innerText;
+
+        playButton.addEventListener("click", function () {
+            let apiKey = "YOUR_RAPIDAPI_KEY"; // Replace with your API key
+            let apiUrl = "https://voicerss-text-to-speech.p.rapidapi.com/";
+
+            let params = new URLSearchParams({
+                key: apiKey,
+                hl: "en-us",
+                src: textToRead,
+                c: "mp3"
+            });
+
+            fetch(apiUrl + "?" + params, {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Host": "voicerss-text-to-speech.p.rapidapi.com",
+                    "X-RapidAPI-Key": apiKey
+                }
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                let audio = new Audio(URL.createObjectURL(blob));
+                audio.play();
+            })
+            .catch(error => console.error("Error:", error));
+        });
+    });
+</script>
