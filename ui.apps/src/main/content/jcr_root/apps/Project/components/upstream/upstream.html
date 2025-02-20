@@ -1,0 +1,8 @@
+<sly data-sly-use.model="com.Project.core.models.UpstreamModel"/>
+
+<div>
+    <p><strong>Text Field 1:</strong> ${model.textfield1}</p>
+    <p><strong>Path Field:</strong> ${model.pathfield}</p>
+    <p><strong>Text Field 2:</strong> ${model.textfield2}</p>
+    <p><strong>Rich Text:</strong> ${model.richtext @context='html'}</p>
+</div>

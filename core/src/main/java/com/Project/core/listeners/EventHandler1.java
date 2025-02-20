@@ -2,8 +2,6 @@ package com.Project.core.listeners;
 
 import com.day.cq.replication.ReplicationAction;
 import com.day.cq.replication.ReplicationActionType;
-import com.day.cq.replication.ReplicationEvent;
-
 import java.util.Collections;
 
 import org.apache.sling.api.resource.ModifiableValueMap;

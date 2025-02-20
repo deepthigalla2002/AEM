@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Upstream"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[upstream-validation]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <textfield1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Text Field 1"
+                        name="./textfield1"/>
+                    <pathfield
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Path Field"
+                        name="./pathfield"/>
+                    <textfield2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Text Field 2"
+                        name="./textfield2"/>
+                    <richtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Rich Text Editor"
+                        name="./richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <format jcr:primaryType="nt:unstructured" features="bold,italic,underline"/>
+                            <justify jcr:primaryType="nt:unstructured" features="justifyleft,justifycenter,justifyright"/>
+                            <lists jcr:primaryType="nt:unstructured" features="unordered,ordered"/>
+                            <links jcr:primaryType="nt:unstructured" features="modifylink,unlink"/>
+                            <paraformat jcr:primaryType="nt:unstructured" features="p,h1,h2,h3"/>
+                            <sourceedit jcr:primaryType="nt:unstructured" features="edit"/>
+                        </rtePlugins>
+                    </richtext>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

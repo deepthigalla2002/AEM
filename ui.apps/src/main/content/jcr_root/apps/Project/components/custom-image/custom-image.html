@@ -1,0 +1,12 @@
+<sly data-sly-use.model="com.Project.core.models.CustomImageModel" />
+
+<!-- Debugging: Display the image path -->
+<p>Image Path: ${model.image}</p>
+
+<!-- Display Image -->
+<div class="custom-image">
+    <img src="${model.image}" alt="Custom Image"
+         style="border: ${model.borderWidth} ${model.borderStyle} ${model.borderColor}; 
+                border-radius: ${model.borderRadius}; 
+                width: ${model.imageWidth};">
+</div>

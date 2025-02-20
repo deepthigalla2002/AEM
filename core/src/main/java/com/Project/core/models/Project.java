@@ -6,8 +6,6 @@ import java.util.*;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import javax.servlet.GenericServlet;
-
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;

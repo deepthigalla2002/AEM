@@ -2,8 +2,6 @@ package com.Project.core.servlets;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.logging.Logger;
-
 import javax.servlet.Servlet;
 
 import org.apache.sling.api.SlingHttpServletRequest;

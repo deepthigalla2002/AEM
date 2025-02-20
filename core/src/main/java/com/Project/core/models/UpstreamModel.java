@@ -3,41 +3,38 @@ package com.Project.core.models;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Task1 {
+public class UpstreamModel {
 
     @ValueMapValue
-    private String textfield;
+    private String textfield1;
 
     @ValueMapValue
     private String pathfield;
 
     @ValueMapValue
-    private boolean checkbox;
+    private String textfield2;
 
-    @ChildResource
-    private List<MultiFieldItem> multifield;
+    @ValueMapValue
+    private String richtext;
 
-    public String getTextfield() {
-        return textfield;
+    public String getTextfield1() {
+        return textfield1;
     }
 
     public String getPathfield() {
         return pathfield;
     }
 
-    public boolean isCheckbox() {
-        return checkbox;
+    public String getTextfield2() {
+        return textfield2;
     }
 
-    public List<MultiFieldItem> getMultifield() {
-        return multifield;
+    public String getRichtext() {
+        return richtext;
     }
-
-    
-
 }

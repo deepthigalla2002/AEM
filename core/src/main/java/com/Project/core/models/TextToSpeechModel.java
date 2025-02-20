@@ -1,7 +1,6 @@
 package com.Project.core.models;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import org.apache.sling.api.resource.Resource;
 import javax.inject.Inject;
 
 public class TextToSpeechModel extends WCMUsePojo {

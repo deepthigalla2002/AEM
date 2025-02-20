@@ -1,6 +1,5 @@
 package com.Project.core.servlets;
 
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -15,7 +14,6 @@ import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 @Component(service = Servlet.class, property = {
         "sling.servlet.methods=" + HttpConstants.METHOD_POST,

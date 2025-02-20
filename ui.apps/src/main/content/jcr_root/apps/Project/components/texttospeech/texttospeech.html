@@ -1,13 +1,28 @@
 <div class="tts-container">
-    <p id="tts-text">${properties.text}</p>
+    <!-- Text Box where user can enter text -->
+    <textarea id="tts-textbox" class="tts-textbox" placeholder="Type text to read or listen to"></textarea>
     <button id="tts-play" class="tts-btn">🔊 Listen</button>
 </div>
 
 <style>
     .tts-container {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 10px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .tts-textbox {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
     }
 
     .tts-btn {
@@ -17,6 +32,8 @@
         border: none;
         cursor: pointer;
         border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
     }
 
     .tts-btn:hover {
@@ -27,32 +44,20 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         let playButton = document.getElementById("tts-play");
-        let textToRead = document.getElementById("tts-text").innerText;
+        let textBox = document.getElementById("tts-textbox");
 
         playButton.addEventListener("click", function () {
-            let apiKey = "YOUR_RAPIDAPI_KEY"; // Replace with your API key
-            let apiUrl = "https://voicerss-text-to-speech.p.rapidapi.com/";
+            let textToRead = textBox.value; // Get text from the textbox
+            if (textToRead.trim() === "") {
+                alert("Please enter some text to read or listen to!");
+                return;
+            }
 
-            let params = new URLSearchParams({
-                key: apiKey,
-                hl: "en-us",
-                src: textToRead,
-                c: "mp3"
-            });
-
-            fetch(apiUrl + "?" + params, {
-                method: "GET",
-                headers: {
-                    "X-RapidAPI-Host": "voicerss-text-to-speech.p.rapidapi.com",
-                    "X-RapidAPI-Key": apiKey
-                }
-            })
-            .then(response => response.blob())
-            .then(blob => {
-                let audio = new Audio(URL.createObjectURL(blob));
-                audio.play();
-            })
-            .catch(error => console.error("Error:", error));
+            let speech = new SpeechSynthesisUtterance(textToRead);
+            speech.lang = "cy-GB"; // Set the language (you can change this as needed)
+            speech.rate = 1; // Adjust speed (0.5 - slow, 1 - normal, 2 - fast)
+            speech.pitch = 1; // Adjust pitch (0 - low, 1 - normal, 2 - high)
+            window.speechSynthesis.speak(speech);
         });
     });
 </script>

@@ -1,27 +1,115 @@
-<div class="resume">
-    <h1>${model.fullName}</h1>
-    <p><strong>Email:</strong> ${model.email}</p>
-    <p><strong>Phone:</strong> ${model.phone}</p>
-    <p><strong>Work Experience:</strong> ${model.experience}</p>
-    <p><strong>Skills:</strong> ${model.skills}</p>
+<sly data-sly-use.model="com.Project.core.models.ResumeModel"/>
+<div class="resume-container">
+    <header>
+        <h1>${model.fullName}</h1>
+        <p>Email: ${model.email} | Phone: ${model.phone}</p>
+    </header>
+    
+    <section>
+        <h2>Profile Summary</h2>
+        <p>${model.summary}</p>
+    </section>
+    
+       <!-- Work Experience Section -->
+       <section class="experience">
+        <h2>Work Experience</h2>
+        <ul data-sly-list.experience="${model.workExperience}">
+            <li>
+                <h3>${experience.company}</h3>
+                <p><strong>Role:</strong> ${experience.role}</p>
+                <p><strong>Duration:</strong> ${experience.duration}</p>
+            </li>
+        </ul>
+    </section>
+    
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul data-sly-list.skill="${model.skills}">
+            <li>${skill.skill}</li>
+        </ul>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <ul data-sly-list.education="${model.education}">
+            <li>
+                <p><strong>Degree:</strong> ${education.degree}</p>
+                <p><strong>Institution:</strong> ${education.institution}</p>
+                <p><strong>Year:</strong> ${education.year}</p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <ul data-sly-list.project="${model.projects}">
+            <li>
+                <h3>${project.projectName}</h3>
+                <p>${project.description}</p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="certifications">
+        <h2>Certifications</h2>
+        <ul data-sly-list.certification="${model.certifications}">
+            <li>
+                <p><strong>Name:</strong> ${certification.certificationName}</p>
+                <p><strong>Issued By:</strong> ${certification.issuedBy}</p>
+                <p><strong>Year:</strong> ${certification.year}</p>
+            </li>
+        </ul>
+    </section>
 </div>
 
-
 <style>
-.resume {
+.resume-container {
     font-family: Arial, sans-serif;
-    border: 2px solid #000;
-    padding: 10px;
-    max-width: 600px;
-    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
-h1 {
-    font-size: 24px;
-    color: #333;
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
-p {
+
+header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+header p {
     font-size: 16px;
-    color: #555;
+    color: gray;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 </style>
